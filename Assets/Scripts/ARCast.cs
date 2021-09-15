@@ -5,6 +5,7 @@ using UnityEngine.XR.ARFoundation;
 
 public class ARCast : MonoBehaviour
 {
+    public ARRaycastManager ARCM;
     public Camera ARCamera;
     public GameObject objectRef;
     public List<GameObject> Planes;
@@ -30,8 +31,18 @@ public class ARCast : MonoBehaviour
                 if (Physics.Raycast(ray, out hitObject))
                 {
                     objectRef.transform.position = hitObject.point;
+                    TurnOffAllPlanes();
                 }
             }
+        }
+    }
+    public void TurnOffAllPlanes()
+    {
+        ARRC.enabled = false;
+
+        foreach (var id in Planes)
+        {
+            id.gameObject.SetActive(false);
         }
     }
 }
