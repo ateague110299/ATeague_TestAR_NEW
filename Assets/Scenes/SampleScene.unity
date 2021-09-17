@@ -575,9 +575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35964264f07ddf45a16f35f93d0a4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ARCM: {fileID: 0}
   ARCamera: {fileID: 1978938131}
-  objectRef: {fileID: 839390593}
+  objectRef: {fileID: 1895255187}
   Planes: []
   ARPM: {fileID: 1430538167}
 --- !u!1 &1895255187
