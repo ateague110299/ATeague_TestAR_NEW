@@ -5,7 +5,6 @@ using UnityEngine.XR.ARFoundation;
 
 public class ARCast : MonoBehaviour
 {
-    public ARRaycastManager ARCM;
     public Camera ARCamera;
     public GameObject objectRef;
     public List<GameObject> Planes;
