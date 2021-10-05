@@ -17,7 +17,7 @@ public class CollisionLogic : MonoBehaviour
         {
             foreach(Transform obj in DefaultLayerChildren.transform)
             {
-                if (gameObject.transform.position.z < door.transform.position.z)
+                if (gameObject.transform.position.z > door.transform.position.z)
                 {
                     obj.gameObject.layer = 0;
                     lookingIN.gameObject.SetActive(false);
@@ -36,6 +36,6 @@ public class CollisionLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(gameObject.transform.position.z < door.transform.position.z);
     }
 }
