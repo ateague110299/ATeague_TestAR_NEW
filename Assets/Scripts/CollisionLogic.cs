@@ -36,6 +36,6 @@ public class CollisionLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameObject.transform.position.z < door.transform.position.z);
+
     }
 }
