@@ -10,6 +10,7 @@ public class ARCast : MonoBehaviour
     public List<GameObject> Planes;
     public ARPlaneManager ARPM;
     public static ARCast ARRC;
+    public Animator myAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,16 @@ public class ARCast : MonoBehaviour
                 RaycastHit hitObject;
                 if (Physics.Raycast(ray, out hitObject))
                 {
+                    if(hitObject.transform.tag == "yes")
+                    {
+                        myAnimator.SetTrigger("Spin");
+                    }
+
+                    else if (hitObject.transform.tag == "no")
+                    {
+                        myAnimator.SetTrigger("Scale");
+                    }
+
                     objectRef.transform.position = hitObject.point;
                     objectRef.gameObject.SetActive(true);
                     TurnOffAllPlanes();
