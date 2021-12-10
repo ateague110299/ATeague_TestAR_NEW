@@ -11,6 +11,7 @@ public class ARCast : MonoBehaviour
     public ARPlaneManager ARPM;
     public static ARCast ARRC;
     public Animator myAnimator;
+    public bool doorIsPlaced; 
 
     // Start is called before the first frame update
     void Start()
@@ -40,17 +41,19 @@ public class ARCast : MonoBehaviour
                         myAnimator.SetTrigger("Scale");
                     }
 
-                    objectRef.transform.position = hitObject.point;
-                    objectRef.gameObject.SetActive(true);
-                    TurnOffAllPlanes();
+                    if (doorIsPlaced == false)
+                    {
+                        objectRef.transform.position = hitObject.point;
+                        objectRef.gameObject.SetActive(true);
+                        TurnOffAllPlanes();
+                    }
                 }
             }
         }
     }
     public void TurnOffAllPlanes()
     {
-        ARRC.enabled = false;
-
+        doorIsPlaced = true; 
         foreach (var id in Planes)
         {
             id.gameObject.SetActive(false);
